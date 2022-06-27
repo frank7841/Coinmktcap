@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import logo from '../public/Assets/coincap_white.png'
+import Search from '../assets/svg/search'
 const styles={
     header: `bg-[#17171A] text-white h-20 flex gap-[90px] w-full p-[20px]`,
     navLink: `text-white flex mx-[10px]`,
@@ -8,6 +8,8 @@ const styles={
     navItem: `relative mr-1 cursor-pointer hover:opacity-60`,
     nav: `flex justify-center items-center gap-[20px]`,
     headerWrapper: `flex justify-center h-full max-w-screen-xl mx-auto px-4`,
+    inputContainer: `flex items-center justify-center p-2 rounded bg-[#171924]`,
+    input: `bg-transparent outline-none text-white w-70 ml-3`
 }
 
 const Header=()=> {
@@ -26,38 +28,30 @@ const Header=()=> {
         
         />
         <div className={styles.headerWrapper}>
-          <div className={styles.nav}>
+          <nav className={styles.nav}>
             <div className={styles.navItem}>
-              <div className={styles.navLin}>
-                Crypto Currencies
-              </div>
-              <div className={styles.badge}/>
-            </div>
-
-
-            <div className={styles.navItem}>
-              <div className={styles.navLin}>
-                Crypto Currencies
+              <div className={styles.navLink}>
+                Cryptocurrency
               </div>
               <div className={styles.badge}/>
             </div>
 
             <div className={styles.navItem}>
-              <div className={styles.navLin}>
+              <div className={styles.navLink}>
                 Exchanges
               </div>
              
             </div>
 
             <div className={styles.navItem}>
-              <div className={styles.navLin}>
+              <div className={styles.navLink}>
                 NFT
               </div>
               <div className={styles.badge}/>
             </div>
 
             <div className={styles.navItem}>
-              <div className={styles.navLin}>
+              <div className={styles.navLink}>
                 Cryptown
               </div>
               <div className={styles.badge}/>
@@ -67,19 +61,35 @@ const Header=()=> {
               <div className={styles.navLin}>
                 Portfolio
               </div>
-              <div className={styles.badge}/>
             </div>
             <div className={styles.navItem}>
-              <div className={styles.navLin}>
-                WatchList
+              <div className={styles.navLink}>
+                Watchlist
+              </div>
+            </div>
+
+            <div className={styles.navItem}>
+              <div className={styles.navLink}>
+                products
               </div>
               <div className={styles.badge}/>
             </div>
+
             <div className={styles.navItem}>
-              <div className={styles.navLin}>
+              <div className={styles.navLink}>
                 Learn
               </div>
-              <div className={styles.badge}/>
+            </div>
+
+          </nav>
+          <div className='flex items-center'>
+            {/* <ConnectButton/> */}
+            <div className={styles.inputContainer}>
+              <Search/>
+              <input
+                className={styles.input}
+                placeholder='Search...'
+                />
             </div>
 
           </div>
