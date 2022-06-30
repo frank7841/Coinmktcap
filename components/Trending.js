@@ -16,28 +16,26 @@ const styles={
 
 const trendingData=[
   {
-    number:1,
-    symbol:'bitcoin',
+    number: 1,
+    symbol: "BTC",
+    name: "Bitcoin",
     icon: btc,
-    isIncrement:true,
-    rate:'22.34%'
-},
-  {
-    number:2  ,
-    symbol:'BTS',
-    name:'Bitcoin',
-    icon: btc,
-    isIncrement:false,
-    rate:'9.34%'
-},
-
-  {
-    number:3  ,
-    symbol:'usdt',
-    name:'Tether',
+    isIncrement: true,
+    rate: "2.34%"
+}, {
+    number: 2,
+    symbol: "USDT",
+    name: "Tether",
     icon: usdt,
-    isIncrement:false,
-    rate:'9.2%'
+    isIncrement: false,
+    rate: "9.32%"
+}, {
+    number: 3,
+    symbol: "BTC",
+    name: "Bitcoin",
+    icon: btc,
+    isIncrement: true,
+    rate: "2.34%"
 },
   
 
