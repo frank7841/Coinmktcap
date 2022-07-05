@@ -1,7 +1,8 @@
 import React,{useContext, useState, useEffect, useCallback} from 'react'
 import btc from '../../assets/btc.png'
 import {coinMarketContext} from '../../context/Context'
-
+import CmcTableHeader from './CmcTableHeader'
+import CmcTableRow from './CmcTableRow'
 const CMCTable = () => {
     
     let {getTopTenCoins}=useContext(coinMarketContext)
@@ -28,11 +29,44 @@ const CMCTable = () => {
             
         }
     }, [getTopTenCoins])
-    console.log(coinData)
+    
 
 
   return (
-    <div>CmcTable</div>
+    <div className='text-white font-bold'>
+        <div className='mx-auto max-w-screen-2xl'>
+               <table className='w-full'>
+                   <CmcTableHeader/>
+                   {coinData && coinData ? (
+                       coinData.map((coin, index)=>{
+                           return(
+                               <CmcTableRow
+                                    key={index}
+                                    startNum={coin.cms_rank}
+                                    coinName={coin.name}
+                                    coinSymbol={coin.symbol}
+                                    coinIcon={btc}
+                                    showBuy={true}
+                                    hRate={coin.quote.USD.percent_change_24h}
+                                    dRate={coin.quote.USD.percent_change_7d}
+                                    hRateIncrement={true}
+                                    dRateIsIncrement={true}
+                                    price={coin.quote.USD.price}
+                                    marketCapValue={coin.quote.USD.market_cap}
+                                    volumeCryptValue={coin.quote.USD.volume_24h}
+                                    volumeValue={coin.total_supply}
+                                    circulatingSupply={coin.circulating_supply}
+                                    />
+                           )
+
+                       })
+
+                   ):(
+                       <></>
+                   )}
+                </table> 
+        </div>
+    </div>
   )
 }
 
